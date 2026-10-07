@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#1557d6">
+  <title>AttendEase - College Attendance Management System</title>
+
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Export libraries used by app.js -->
+  <script src="https://cdn.jsdelivr.net/npm/jspdf@2.5.1/dist/jspdf.umd.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jspdf-autotable@3.8.4/dist/jspdf.plugin.autotable.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
+</head>
+
+<body>
+  <!-- Login/setup screen. app.js fills #gate dynamically. -->
+  <main id="gate" class="gate"></main>
+
+  <!-- Main application -->
+  <div class="app" hidden>
+    <header class="topbar">
+      <div class="brand">
+        <div class="brand-mark">🎓</div>
+        <div>
+          <h1>AttendEase</h1>
+          <p>College Attendance Management System</p>
+        </div>
+      </div>
+
+      <div class="top-actions">
+        <span id="mode" class="mode"></span>
+        <span id="who" class="who"></span>
+        <button class="btn light" data-act="logout">Logout</button>
+      </div>
+    </header>
+
+    <div class="layout">
+      <aside class="sidebar">
+        <div class="college-label" id="college">My College</div>
+        <nav id="nav"></nav>
+      </aside>
+
+      <main id="main" class="main"></main>
+    </div>
+  </div>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+  <script src="app.js"></script>
+</body>
+</html>
